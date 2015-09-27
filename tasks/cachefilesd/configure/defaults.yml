@@ -1,0 +1,12 @@
+---
+
+- name: "cachefilesd:configure:defaults | Configure the defaults."
+  lineinfile: 
+    dest:        "{{ item }}"
+    regexp:      '^RUN' 
+    insertafter: '^#RUN'
+    line:        'RUN=yes'
+    state:       'present'
+  with_items:
+    - "{{ cachefilesd_defaults_file }}"
+

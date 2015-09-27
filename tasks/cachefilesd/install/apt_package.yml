@@ -1,0 +1,11 @@
+---
+
+- name: "cachefilesd:install:package | Installing the apt package."
+  apt: 
+    name:         "{{ item }}" 
+    state:        'latest'
+    update_cache: 'yes'
+  with_items:
+    - "{{ cachefilesd_apt_package }}" 
+
+

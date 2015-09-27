@@ -1,0 +1,5 @@
+---
+
+cachefilesd_apt_package:   'cachefilesd'
+cachefilesd_defaults_file: '/etc/default/cachefilesd'
+

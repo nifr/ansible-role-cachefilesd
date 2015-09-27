@@ -1,0 +1,17 @@
+---
+
+#- include: "cachefilesd/add/apt_key.yml"
+#  tags:    [cachefilesd, add, apt-key]
+
+#- include: "cachefilesd/add/apt_repository.yml"
+#  tags:    [cachefilesd, add, repository]
+
+- include: "cachefilesd/install/apt_package.yml"
+  tags:    [cachefilesd, install, package]
+
+- include: "cachefilesd/install/defaults.yml"
+  tags:    [cachefilesd, install, defaults]
+
+- include: "cachefilesd/configure/defaults.yml"
+  tags:    [cachefilesd, configure, defaults]
+    

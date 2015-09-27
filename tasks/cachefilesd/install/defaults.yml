@@ -1,0 +1,19 @@
+---
+
+- stat: 
+    path: "{{ item }}"
+  register: defaults_file
+  with_items:
+    - "{{ cachefilesd_defaults_file }}"
+
+- name: "cachefilesd:create:defaults-file | Creates the defaults file."
+  file: 
+    path:  "{{ item }}"
+    state: 'touch'
+    owner: 'root' 
+    group: 'root' 
+    mode:  '0544'
+  when: "defaults_file.stat.exists is defined and defaults_file.stat.exists"
+  with_items:
+    - "{{ cachefilesd_defaults_file }}"
+
